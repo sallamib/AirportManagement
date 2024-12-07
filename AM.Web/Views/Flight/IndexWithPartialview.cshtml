@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AM.Applicationcore.Domain.Flight>
+
+@{
+    ViewData["Title"] = "IndexWithPartialview";
+}
+
+<h1>IndexWithPartialview</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+@*     <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EffectiveArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EsstimatedDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirlineLogo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneFK)
+            </th>
+            <th></th>
+        </tr>
+    </thead> *@
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td colspan="5">
+               <partial name="_FlightDetails" model="item" />
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
